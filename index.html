@@ -400,7 +400,7 @@ function getCos(name){
 // ═══ CATEGORY DATA ═══
 const CATS=[
 {id:"fab",t:"Semiconductor Fabrication & Packaging",tz:"半導體製造與封裝",icon:"⚡",c:"#58a6ff",bg:"rgba(88,166,255,.12)",s:[
-{n:"TSMC",tk:"TSM"},{n:"Amkor Technology",tk:"AMKR"},{n:"ASE Technology / SPIL",tk:"ASX"},{n:"Tower Semiconductor",tk:"TSEM"},{n:"GlobalFoundries",tk:"GFS"},{n:"UMC",tk:"UMC"}]},
+{n:"TSMC",tk:"TSM"},{n:"Amkor Technology",tk:"AMKR"},{n:"ASE Technology / SPIL",tk:"ASX"},{n:"Tower Semiconductor",tk:"TSEM"},{n:"GlobalFoundries",tk:"GFS"},{n:"UMC",tk:"UMC"},{n:"JCET Group",tk:"600584.SH"}]},
 {id:"design",t:"Chip Architecture & ASIC Design",tz:"晶片架構與 ASIC 設計",icon:"⚙️",c:"#EA4335",bg:"rgba(234,67,53,.12)",s:[
 {n:"Alphabet / Google",tk:"GOOGL"},{n:"Broadcom",tk:"AVGO"},{n:"MediaTek",tk:"2454.TW"},{n:"Global Unichip (GUC)",tk:"3443.TW"},{n:"Cadence Design Systems",tk:"CDNS"},{n:"Synopsys",tk:"SNPS"},{n:"Groq (NVIDIA)",tk:"Private"}]},
 {id:"hbm",t:"HBM Memory & DRAM",tz:"HBM 記憶體與 DRAM",icon:"🧠",c:"#FBBC04",bg:"rgba(251,188,4,.12)",s:[
@@ -431,18 +431,97 @@ const CATS=[
 {n:"Amphenol",tk:"APH"},{n:"TE Connectivity",tk:"TEL"},{n:"Molex",tk:"Private"},{n:"Luxshare Precision",tk:"002475.SZ"},{n:"Foxconn Interconnect",tk:"6088.HK"}]},
 {id:"network",t:"Networking & Switch Silicon",tz:"網路與交換晶片",icon:"🌐",c:"#79c0ff",bg:"rgba(121,192,255,.12)",s:[
 {n:"Astera Labs",tk:"ALAB"},{n:"Broadcom",tk:"AVGO"},{n:"Marvell Technology",tk:"MRVL"},{n:"Credo Technology",tk:"CRDO"},{n:"Arista Networks",tk:"ANET"},{n:"Upscale AI",tk:"Private"},{n:"Enfabrica",tk:"Private"},{n:"Micas Networks",tk:"Private"}]},
-{id:"optics",t:"Optics, Transceivers & OCS",tz:"光學、收發器與 OCS",icon:"💡",c:"#7ee787",bg:"rgba(126,231,135,.12)",s:[
-{n:"Coherent Corp.",tk:"COHR"},{n:"Lumentum",tk:"LITE"},{n:"InnoLight Technology",tk:"300502.SZ"},{n:"Corning",tk:"GLW"},{n:"Google (in-house OCS)",tk:"GOOGL"},{n:"Celestica",tk:"CLS"},{n:"Polatis (HUBER+SUHNER)",tk:"HUBN.SW"},{n:"TFC Optical",tk:"300394.SZ"},{n:"Browave",tk:"3163.TWO"},{n:"Eoptolink",tk:"300502.SZ"},{n:"PCL Tech",tk:"4977.TW"},{n:"FOCI",tk:"3363.TWO"},{n:"Advanced Fiber Resources",tk:"300620.SZ"},{n:"Nextronics",tk:"8417.TWO"},{n:"COXOC",tk:"6205.TW"},{n:"Senko",tk:"Private"},{n:"Sumitomo Electric",tk:"8053.T"},{n:"Furukawa Electric",tk:"5801.T"},{n:"VPEC",tk:"2455.TW"},{n:"Landmark Optoelectronics",tk:"3081.TWO"},{n:"YJ Semitech",tk:"688498.SS"},{n:"Fabrinet",tk:"FN"},{n:"Applied Optoelectronics (AAOI)",tk:"AAOI"},{n:"MACOM Technology",tk:"MTSI"},{n:"Viavi Solutions",tk:"VIAV"},{n:"Ciena",tk:"CIEN"},{n:"Nokia",tk:"NOK"},{n:"O-Net Technologies",tk:"002281.SZ"},{n:"IQE",tk:"IQE.L"},{n:"LandMark / EXTRA",tk:"4971.TW"},{n:"Yongding",tk:"600105.SH"},{n:"Changguang Huaxin",tk:"688048.SH"},{n:"Sun-Telecom",tk:"300570.SZ"},{n:"Long Chip Bochuang",tk:"300548.SZ"},{n:"Boyo Optoelectronics",tk:"688167.SH"},{n:"Jpt Photonics",tk:"688025.SH"},{n:"Sanhuan Group",tk:"300408.SZ"},{n:"Huagong Tech",tk:"000988.SZ"},{n:"Dongshan Precision",tk:"002384.SZ"},{n:"CIG (Cambridge Industries)",tk:"06166.HK"},{n:"Fujikura",tk:"5803.T"},{n:"Prysmian",tk:"PRY.MI"},{n:"Yangtze Optical",tk:"06869.HK"},{n:"Hengtong Optic-Electric",tk:"600487.SH"},{n:"Mitsubishi Electric",tk:"6503.T"},{n:"Zhihen Tech",tk:"301486.SZ"}]},
+{id:"optics",t:"Optical Modules & Transceivers",tz:"光學模組與收發器",icon:"📡",c:"#7ee787",bg:"rgba(126,231,135,.12)",s:[
+{n:"Coherent Corp.",tk:"COHR"},
+{n:"Lumentum",tk:"LITE"},
+{n:"InnoLight Technology",tk:"300308.SZ"},
+{n:"Fabrinet",tk:"FN"},
+{n:"Eoptolink",tk:"300502.SZ"},
+{n:"TFC Optical",tk:"300394.SZ"},
+{n:"Browave",tk:"3163.TWO"},
+{n:"PCL Tech",tk:"4977.TW"},
+{n:"Applied Optoelectronics (AAOI)",tk:"AAOI"},
+{n:"MACOM Technology",tk:"MTSI"},
+{n:"Ciena",tk:"CIEN"},
+{n:"Nokia",tk:"NOK"},
+{n:"Huagong Tech",tk:"000988.SZ"},
+{n:"Dongshan Precision",tk:"002384.SZ"},
+{n:"CIG (Cambridge Industries)",tk:"06166.HK"},
+{n:"Celestica",tk:"CLS"},
+{n:"Polatis (HUBER+SUHNER)",tk:"Private"},
+{n:"Google (in-house OCS)",tk:"GOOGL"}]},
+{id:"lasers",t:"Lasers, Photonic IC & Substrates",tz:"雷射、矽光晶片與基板",icon:"💡",c:"#fcd34d",bg:"rgba(252,211,77,.12)",s:[
+{n:"Sumitomo Electric",tk:"8053.T"},
+{n:"Furukawa Electric",tk:"5801.T"},
+{n:"VPEC",tk:"2455.TW"},
+{n:"Landmark Optoelectronics",tk:"3081.TWO"},
+{n:"YJ Semitech",tk:"688498.SS"},
+{n:"O-Net Technologies",tk:"002281.SZ"},
+{n:"Yongding",tk:"600105.SH"},
+{n:"Changguang Huaxin",tk:"688048.SH"},
+{n:"Mitsubishi Electric",tk:"6503.T"},
+{n:"Boyo Optoelectronics",tk:"688167.SH"},
+{n:"Jpt Photonics",tk:"688025.SH"},
+{n:"Long Chip Bochuang",tk:"300548.SZ"},
+{n:"IQE",tk:"IQE.L"},
+{n:"LandMark / EXTRA",tk:"4971.TW"},
+{n:"AXT Inc",tk:"AXTI"},
+{n:"Yunnan Germanium",tk:"002428.SZ"},
+{n:"JX Nippon",tk:"5016.T"}]},
+{id:"optical_comp",t:"Optical Components & Fiber",tz:"光元件與光纖",icon:"🧵",c:"#a3e635",bg:"rgba(163,230,53,.12)",s:[
+{n:"Corning",tk:"GLW"},
+{n:"Senko",tk:"Private"},
+{n:"Nextronics",tk:"8417.TWO"},
+{n:"COXOC",tk:"6205.TW"},
+{n:"FOCI",tk:"3363.TWO"},
+{n:"Advanced Fiber Resources",tk:"300620.SZ"},
+{n:"Zhihen Tech",tk:"301486.SZ"},
+{n:"Sanhuan Group",tk:"300408.SZ"},
+{n:"Sun-Telecom",tk:"300570.SZ"},
+{n:"Fujikura",tk:"5803.T"},
+{n:"Prysmian",tk:"PRY.MI"},
+{n:"Yangtze Optical",tk:"06869.HK"},
+{n:"Hengtong Optic-Electric",tk:"600487.SH"},
+{n:"Viavi Solutions",tk:"VIAV"},
+{n:"Mitsui Mining",tk:"5706.T"}]},
+
 {id:"power_semi",t:"Power Semiconductors (VRMs)",tz:"功率半導體（VRM）",icon:"🔌",c:"#ff7b72",bg:"rgba(255,123,114,.12)",s:[
 {n:"Infineon Technologies",tk:"IFX.DE"},{n:"Monolithic Power (MPS)",tk:"MPWR"},{n:"Texas Instruments",tk:"TXN"},{n:"Analog Devices",tk:"ADI"},{n:"Renesas Electronics",tk:"6723.T"},{n:"onsemi",tk:"ON"},{n:"Alpha & Omega Semi",tk:"AOSL"},{n:"Navitas Semiconductor",tk:"NVTS"},{n:"Advanced Energy",tk:"AEIS"}]},
 {id:"power_sys",t:"Power Systems & Infrastructure",tz:"電源系統與基礎設施",icon:"🔋",c:"#ffa657",bg:"rgba(255,166,87,.12)",s:[
 {n:"Delta Electronics",tk:"2308.TW"},{n:"Flex (Flextronics)",tk:"FLEX"},{n:"LITEON",tk:"2301.TW"},{n:"GE Vernova",tk:"GEV"},{n:"Eaton",tk:"ETN"},{n:"ABB",tk:"ABBN.SW"},{n:"Schneider Electric",tk:"SU.PA"},{n:"Vertiv",tk:"VRT"},{n:"Trane Technologies",tk:"TT"},{n:"Siemens Energy",tk:"ENR.DE"}]},
 {id:"cooling",t:"Liquid Cooling & Thermal",tz:"液冷與散熱",icon:"❄️",c:"#39d4e6",bg:"rgba(57,212,230,.12)",s:[
 {n:"Vertiv",tk:"VRT"},{n:"nVent Electric",tk:"NVT"},{n:"Parker Hannifin",tk:"PH"},{n:"Delta Electronics",tk:"2308.TW"},{n:"SPX Technologies",tk:"SPXC"},{n:"AVC (Asia Vital)",tk:"3017.TW"},{n:"Allegro MicroSystems",tk:"ALGM"},{n:"CoolIT Systems",tk:"Private"},{n:"Motivair",tk:"Private"},{n:"Danfoss",tk:"Private"},{n:"Rittal",tk:"Private"}]},
-{id:"system",t:"System Integrators & OEMs",tz:"系統整合商與 OEM",icon:"🖥️",c:"#e3b341",bg:"rgba(227,179,65,.12)",s:[
-{n:"Sanmina",tk:"SANM"},{n:"Super Micro Computer",tk:"SMCI"},{n:"Dell Technologies",tk:"DELL"},{n:"HPE",tk:"HPE"},{n:"Foxconn (Hon Hai)",tk:"2317.TW"},{n:"Quanta Computer",tk:"2382.TW"},{n:"Lenovo",tk:"0992.HK"},{n:"Gigabyte",tk:"2376.TW"},{n:"Inspur",tk:"000977.SZ"},{n:"Cisco",tk:"CSCO"},{n:"Celestica",tk:"CLS"},{n:"ASUS",tk:"2357.TW"},{n:"QCT (Quanta Cloud)",tk:"2382.TW"},{n:"Wistron",tk:"3231.TW"},{n:"Wiwynn",tk:"6669.TW"},{n:"Robotechnik",tk:"300757.SZ"},{n:"ASMPT",tk:"0522.HK"},{n:"All Ring",tk:"6187.TWO"},{n:"Teradyne",tk:"TER"},{n:"Keysight Technologies",tk:"KEYS"},{n:"FormFactor",tk:"FORM"},{n:"Kulicke & Soffa",tk:"KLIC"},{n:"Chroma ATE",tk:"2360.TW"},{n:"JCET Group",tk:"600584.SH"},{n:"Tokyo Electron",tk:"8035.T"},{n:"Camfridge (KAGE)",tk:"301338.SZ"}]},
+{id:"equipment",t:"Test & Packaging Equipment",tz:"測試與封裝設備",icon:"🔧",c:"#94a3b8",bg:"rgba(148,163,184,.12)",s:[
+{n:"Teradyne",tk:"TER"},
+{n:"Keysight Technologies",tk:"KEYS"},
+{n:"FormFactor",tk:"FORM"},
+{n:"Tokyo Electron",tk:"8035.T"},
+{n:"Chroma ATE",tk:"2360.TW"},
+{n:"Kulicke & Soffa",tk:"KLIC"},
+{n:"ASMPT",tk:"0522.HK"},
+{n:"Robotechnik",tk:"300757.SZ"},
+{n:"All Ring",tk:"6187.TWO"},
+{n:"Camfridge (KAGE)",tk:"301338.SZ"}]},
+{id:"system",t:"Enterprise Server OEMs",tz:"企業伺服器原廠",icon:"🖥️",c:"#e3b341",bg:"rgba(227,179,65,.12)",s:[
+{n:"Super Micro Computer",tk:"SMCI"},
+{n:"Dell Technologies",tk:"DELL"},
+{n:"HPE",tk:"HPE"},
+{n:"Lenovo",tk:"0992.HK"},
+{n:"Cisco",tk:"CSCO"},
+{n:"Gigabyte",tk:"2376.TW"},
+{n:"ASUS",tk:"2357.TW"},
+{n:"Inspur",tk:"000977.SZ"}]},
+{id:"odm",t:"Cloud ODMs & Rack Integrators",tz:"雲端 ODM 與機架整合商",icon:"🏭",c:"#fb7185",bg:"rgba(251,113,133,.12)",s:[
+{n:"Foxconn (Hon Hai)",tk:"2317.TW"},
+{n:"Quanta Computer",tk:"2382.TW"},
+{n:"QCT (Quanta Cloud)",tk:"2382.TW"},
+{n:"Wistron",tk:"3231.TW"},
+{n:"Wiwynn",tk:"6669.TW"},
+{n:"Celestica",tk:"CLS"},
+{n:"Sanmina",tk:"SANM"}]},
+
 {id:"ip",t:"IP Licensing, EDA & Management",tz:"IP 授權、EDA 與管理",icon:"🏛️",c:"#bc8cff",bg:"rgba(188,140,255,.12)",s:[
-{n:"Arm Holdings",tk:"ARM"},{n:"Aspeed Technology",tk:"5274.TW"},{n:"Cadence Design Systems",tk:"CDNS"},{n:"Synopsys",tk:"SNPS"},{n:"Enplas",tk:"6961.T"},{n:"Advantest",tk:"6857.T"},{n:"AMI (American Megatrends)",tk:"Private"},{n:"Intel / Altera",tk:"INTC"},{n:"AXT Inc",tk:"AXTI"},{n:"Yunnan Germanium",tk:"002428.SZ"},{n:"JX Nippon",tk:"5016.T"},{n:"Mitsui Mining",tk:"5706.T"}]},
+{n:"Arm Holdings",tk:"ARM"},{n:"Aspeed Technology",tk:"5274.TW"},{n:"Cadence Design Systems",tk:"CDNS"},{n:"Synopsys",tk:"SNPS"},{n:"Enplas",tk:"6961.T"},{n:"Advantest",tk:"6857.T"},{n:"AMI (American Megatrends)",tk:"Private"},{n:"Intel / Altera",tk:"INTC"}]},
 {id:"ecosystem",t:"Ecosystem, Storage & Customers",tz:"生態系、儲存與客戶",icon:"🏢",c:"#8b949e",bg:"rgba(139,148,158,.12)",s:[
 {n:"Meta Platforms",tk:"META"},{n:"Anthropic",tk:"Private"},{n:"Apple",tk:"AAPL"},{n:"Microsoft",tk:"MSFT"},{n:"OpenAI",tk:"Private"},{n:"NetApp",tk:"NTAP"},{n:"VAST Data",tk:"Private"},{n:"Weka",tk:"Private"},{n:"DDN",tk:"Private"},{n:"CoreWeave",tk:"CRWV"},{n:"Hitachi Vantara",tk:"6501.T"},{n:"Pure Storage",tk:"PSTG"},{n:"IBM",tk:"IBM"},{n:"Nutanix",tk:"NTNX"},{n:"Cloudian",tk:"Private"},{n:"xAI",tk:"Private"}]},
 ];
